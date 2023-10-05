@@ -1,0 +1,375 @@
+Lunes 2Oct23
+
+Python
+	Puesto en públic en 1991
+	Multiparadigm
+		OOP, Scripting Language, Functional
+
+Python is used in many different contexts, such as system programming, web and
+API programming, GUI applications, gaming and robotics, rapid prototyping,
+system integration, data science, database applications, real-time communication,
+and much more. Several prestigious universities have also adopted Python as their
+main language in computer science courses.
+
+Python 2.7
+	-> 2020
+
+Python 3
+	2008 --->
+
+Python 3.12 2Oct23  ----> Pre-release
+
+import sys
+print(sys.version)
+
+Install Python
+	Microsoft Store  ----> Python 3.7
+
+	https://www.python.org/   ---> Downloads
+
+	Distribuciones ---> ML/Data Science   Anaconda
+
+	https://www.python.org/downloads/
+
+IDE
+	python.exe ----> immediate interpreter..... exit()
+	Visual Studio Code
+	PyCharm (JetBrains) Community Edition y Pro Edition
+	Jupyter Notebooks https://jupyter.org/
+		https://bootstrap.pypa.io/get-pip.py
+		python get-pip.py
+			PATH:
+				C:\Users\cachavez\AppData\Local\Programs\Python\Python312	
+				C:\Users\cachavez\AppData\Local\Programs\Python\Python312\Scripts
+
+		python --version      -V
+		pip --version         -V
+
+		pip install notebook      <-------- pip (js npm, yarn. php composer. java maven/gradle. c# nuget)
+			Mandó un error de dependencias
+
+		https://jupyter.org/try-jupyter/retro/notebooks/?path=Untitled1.ipynb (Jupyter Notebooks Online)
+
+			Intro to Python.ipynb
+
+	https://www.sololearn.com/compiler-playground
+
+
+VIRTUAL ENVIRONMENTS
+
+Creación de virtual environments
+	python -m venv wilson    <---- wilson es el nombre del virtual environment (Ahí se creo)
+
+	python -m venv venv\wilson <------ venv\ con miras a gitignorarlo el folder de los venvs
+
+Para poder utilizar un venv se tiene que activar
+
+	wilson\Scripts\activate
+
+Para desactivarlo
+	deactivate
+
+Para borrarlo
+	Se elimina la carpeta del virtual environment
+
+Una vez activado el virtual environment instalamos las dependencias (mismas que quedan asociadas con el venv)
+
+	pip install flask  (Flask es un framework web más minimalista que Django)
+
+pip install flask	---------> virtual environment
+
+pip install django	---------> virtual environment
+pip install requests   	---------> virtual environment
+
+	pip freeze > requirements.txt     <---- todas las dependencias del virtual env se van a registrar en requirements.txt
+
+	pip install -r requirements.txt   <---- instala todas las dependencias necesarias para armar el proyecto
+
+EJERCICIO
+
+	Crear un folder llamada data-science-python
+	Inicializar un virtual environment venv\...
+	Activar el ambiente
+	Instalar las librerias NumPy, SciPy, Matplotlib
+		pip install numpy
+		pip install scipy
+		pip install -U matplotlib
+	Generar el archivo requirements.txt
+
+pyversions  <---- PENDIENTE
+
+Martes 3Oct23
+
+Organización de código
+
+	python scripts (equivalente bash kornshell powershell) .py
+
+	Proyecto Python
+
+		modules ----> archivos .py
+		packages ----> folders marcados con __init__.py
+		libraries ----> from math import factorial
+
+		namespaces
+			from library.second_floor.section_x.row_three import book
+
+SCOPES
+	local
+	enclosing ---> cuando una función encierra (encloses) a otra función
+	global
+	*built-in  print
+
+	local --> enclosing ----> global ----> built-in ----> undefined (error no está definido)
+
+	(LEGB)
+
+
+OOP
+	class constructors
+	object
+
+class Persona:
+	def __init__():
+
+	.....
+
+IDEs
+	Visual Studio Code
+	PyCharm
+	Sublime Text
+	Atom
+	Jupyter Notebooks (ML, Data Science)  -> https://jupyter.org/
+
+DATA TYPES
+
+Toda asignacion de una variable desemboca en un objeto que tiene Id y tiene Type
+
+Se puede saber el id de un objeto con la función bult-in de Python id()
+
+1574429238208
+1574429238256  
+
+1574429238208  
+1574429238256  
+
+numero1 = -7
+numero2 = 4
+print(numero1//numero2)   -----> -2
+print(int(numero1 / numero2))  ---> -1
+
+	integer division // redondea siempre hacia menos infinito
+
+Elevar a potencias
+numero1 = 10
+numero1 ** 3
+pow(10, 3) 1000 PENDIENTE 3.6 1000.0 ????
+
+
+booleans
+
+	True o False
+
+	bool(1) bool(333) bool(-455)  True
+	bool(0)  False
+
+	bool('a') bool('xytxyxyxyxyxyyx') True
+	bool('') False
+
+
+EJERCICIO: adivina_numero.py
+
+	Le preguntara un numero al usuario entre 1 y 10
+
+	y verificara contra un numero al azar si lo adivino
+
+from random import randint
+
+value = randint(1,10)
+print(value)
+
+input()  <----- built in function para pedir entrada de la consola.
+int() <--- convertir a entero
+
+Real Numbers
+
+	Todo numero con . es tratado con doble precision
+
+	>>> import sys
+	>>> sys.float_info
+
+	math.floor(num)
+	round(num,2)
+
+Fractions, Decimals, Complex Numbers
+
+STRINGS
+
+" "
+' '
+"""
+"""
+
+'''
+'''
+
+f-strings  --> String Interpolation 3.6 --->
+
+mensaje = f"El area de un circulo con radio {radio} es igual a {round(resultado,2)}"
+
+"Hello, %s. You are %s." % (name, age) <----- Python antes de la 3.6
+
+Miércoles 5Oct23
+
+	python -V  --version
+	pip -V  --version
+
+	módulos ----> .py
+
+	Built-In Modules
+		https://docs.python.org/3.10/py-modindex.html#cap-m
+
+	Built-In Functions
+		https://docs.python.org/3.10/library/functions.html?highlight=built
+
+	Documentación
+		https://docs.python.org/
+
+	pyenv
+		Multiples versiones de python
+		https://k0nze.dev/posts/install-pyenv-venv-vscode/
+
+
+	data types (immutables non-immutables)
+		variable ----> objeto.... id, type, value
+		
+		Python, as a dynamically typed language, offers various data types to handle different kinds of information. 
+
+		GC (Garbage Collection)
+
+	Immutable datatypes are those whose values cannot be changed after they are created. Any attempt to modify an immutable object will result in the creation of a new object.
+
+		int, float, complex, string, tuple
+
+	EJERCICIO:
+		Agregar un módulo que se llame buscador.py
+
+			con una funcion que se llame buscarCadenaEnArchivo(loquebusco, ondi)
+
+			buscarCadenaEnArchivo('Mango', 'C:\Users\cachavez\curso-python\extras\frutas.txt')
+
+			linea.find(palabra)    <--------- -1 si no existe
+
+			"La palabra Mango si existe en el archivo"
+
+Advantages of Tuple over List in Python
+https://www.programiz.com/python-programming/tuple
+
+Since tuples are quite similar to lists, both of them are used in similar situations.
+
+However, there are certain advantages of implementing a tuple over a list:
+
+We generally use tuples for heterogeneous (different) data types and lists for homogeneous (similar) data types.
+Since tuples are immutable, iterating through a tuple is faster than with a list. So there is a slight performance boost.
+Tuples that contain immutable elements can be used as a key for a dictionary. With lists, this is not possible.
+If you have data that doesn't change, implementing it as tuple will guarantee that it remains write-protected.
+
+Mutable Datatypes
+Mutable datatypes, in contrast to immutable datatypes, can be modified after creation. 
+These objects can have their values updated, added, or removed without creating a new object.
+
+List
+
+from math import prod
+lista = []
+lista.append("Ivan")
+lista.append("Maria")
+lista.append(56)
+
+lista = list("Parangaricutirimicuaro")
+lista.pop(2)
+lista.remove('i')
+print(lista)
+print(type(lista))
+
+lista = [10,20,30,40,50]
+print(id(lista))
+lista = [1,2,3,4,5]
+print(id(lista))
+
+numeros = [9,8,2]
+print(prod(numeros))
+print(numeros)
+print(sorted(numeros))
+
+lista_combinada = [(2,3),(9,8),(1,3),(7,5),(1,9),(9,1)]
+print(lista_combinada)
+print(min(lista_combinada))
+print(max(lista_combinada))
+print(sorted(lista_combinada))
+
+
+Ejercicio:
+
+	Crear una funcion en el modulo compara_listas.py que reciba dos listas
+
+	El resultado debera ser una nueva lista con los elementos que coincidan en ambas listas 
+		y el numero de elementos que coincidieron
+
+Jueves 5Oct23
+
+Set
+
+conjunto1 = set()
+
+conjunto1.add(1000)
+conjunto1.add(2000)
+conjunto1.add(3000)
+
+Tuple ---> ()
+Lists ----> []
+Set ------> {} non-suscriptable, no repetidos,add/remove
+	frozenset ---> no tiene add() ni remove()
+
+Dictionary ----> K,V  -----> Key, Value
+	{k:v,k:v,k:v}
+
+Ejercicio:
+	Implementar usando diccionarios un contador de palabras en un archivo
+
+DATES AND TIMES
+
+from datetime import datetime
+datetime.now()
+datetime.utcnow()
+
+
+#print(datetime.utcnow()) en 3.12 ya no ejecuta datetime.utcnow()
+A partir de la version 3.12.0 se hace así:
+
+from datetime import datetime, timezone
+utc = datetime.now(tz=timezone.utc)
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
