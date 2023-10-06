@@ -349,7 +349,42 @@ A partir de la version 3.12.0 se hace así:
 from datetime import datetime, timezone
 utc = datetime.now(tz=timezone.utc)
 
+arrow --- external library for date and time
+
+	pip install -U arrow
+
+	import arrow
+	print(arrow.utcnow())
+
+Módulos
+	main.py
+	arimerica.py
+
+Condicionales
+	if ________ :
+		....
+
+	if ______:
 	
+	else:
+	 _________
+
+	if
+	elif
+	elif
+	elif
+	else:
+
+	variable=(cond)?si_se_cumple:si_no_se_cumple <------C#
+
+	(terciario)
+	variable = si_se_cumple if cond else no_se_cumple
+
+	switch?? <--------- no hay switch o case en Python < 3.10
+
+	En python 3.10 existe la palabra match
+		
+
 
 
 
