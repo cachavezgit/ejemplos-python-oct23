@@ -383,7 +383,108 @@ Condicionales
 	switch?? <--------- no hay switch o case en Python < 3.10
 
 	En python 3.10 existe la palabra match
+
+Lunes 9Oct23
+	tuples, list, set, dictionary	
+
+	for
+		---> range
+		---> sequence
+
+range:
+print(range(10))
+
+for x in range(10):
+    print(x)
+
+for y in range(1,6):
+    print(y)
+
+for z in range(2,20,2):   <----- (start, stop, step)    stop es excluded
+    print(z)
+
+ciudades = ["Mexicali","Monterrey","Villahermosa"]
+for ciudad in range(len(ciudades)):
+    print(ciudades[ciudad])
+
+sequence:
+	for ciudad in ciudades:
+	    print(ciudad)
+
+n = 987
+remainders = []
+while n > 0:
+    remainder = n % 2 # remainder of division by 2
+    remainders.append(remainder) # we keep track of remainders
+    n //= 2 # we divide n by 2
+remainders.reverse()
+print(remainders)
+
+
+	Ejercicio: factorial.py 
+		while
+
+		5 x 4 x 3 x 2 x 1    = 120
+
+break & continue
+	break -> finaliza totalmente el ciclo normalmente en base a una condicion
+	continue -> finaliza la iteración actual y avanza a la siguiente
+
+
+class DriverException(Exception):
+    pass
+
+people = [('James', 17), ('Kirk', 9), ('Lars', 13), ('Robert', 8)]
+driver = None
+
+for person, age in people:
+    if age >= 18:
+        driver = (person, age)
+        break
+
+if driver is None:
+    raise DriverException('Driver not found.')
+
+
+Ejercicio:
+	Crear un archivo productos.txt
+
+		Cargador Usb, 90
+		Llavero, 40
+		Engrapadora, 20
+
+
+	crear el programa procesa-productos.py
+
+		Leera el archivo de productos
+		iterarara por todas las lines o productos, obteniendo tuplas producto,precio
+		en funcion del dia de la semana, imprimira el producto y el precio con descuento:
+			lunes, miércoles, viernes: 10%
+			sábados y domingos no descuenta nada
+			martes y jueves: 15%
+
+
+		para pruebas agregarle a la fecha del dia un intervalo aleatorio de 0 a 6 dias
+
+
+
+	
 		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 
 
 
