@@ -3,5 +3,5 @@ def modifica_numero(num):
     print(num)
 
 valor = 10
-modifica_numero(valor)
+modifica_numero(valor)  # Los parametros se pasan por valor
 print(valor)

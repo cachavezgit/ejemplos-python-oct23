@@ -6,3 +6,4 @@ while n > 0:
     n //= 2 # we divide n by 2
 remainders.reverse()
 print(remainders)
+

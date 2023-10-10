@@ -466,9 +466,103 @@ Ejercicio:
 
 		para pruebas agregarle a la fecha del dia un intervalo aleatorio de 0 a 6 dias
 
+Martes 10Oct23
+
+Funciones
+	def ________():
+		__________
+		__________
+		__________
+
+	input parameters y el return son opcionales
+
+	Una función puede encerrar a otras funciones "nested function" dentro de una "enclosing function"
+
+	def demo(x): <-------- el comportamiento interno dependerá si es mutable o inmutable el parámetro
+		x = 8
+
+	z=9
+	demo(z)
+
+INMUTABLES: (Strings, Numbers, Tuples)
+z = "mensaje"
+def cambia(x):
+    print(x)   <----- "mensaje"
+    x = "otra cosa" <------ "otra cosa"
+    print(x)
+
+cambia(z) 
+print(z) <---- "mensaje"
+
+MUTABLES (Lists, Dictionaries, Sets)
+lista = [1,2,3]
+def cambiamutable(x):
+    print(x)
+    #x = [1000,2000,3000]
+    x[1] = 1000
+    print(x)
+
+cambiamutable(lista)
+print(lista)
+
+Funciones pueden tener argumentos de forma opcional y se pueden alimentar:
+	- Posicional (izq a der)
+
+from datetime import date
+
+def imprime_datos(nombre, numero, fecha):
+    print(f"Nombre: {nombre} - Numero: {numero} Fecha: {fecha}")
+
+imprime_datos("Wilson", 1023, date.today()) # Posicional
+
+imprime_datos(fecha=date.today(), nombre="Maria", numero=12.34) #Keyword
+
+info_para_la_funcion = ("Maria", 123, date.today())
+imprime_datos(*info_para_la_funcion) #Iterable unpacking *
+
+diccionario_argumentos = {'nombre':'Wilson', 'numero':123,'fecha':date.today()}
+imprime_datos(**diccionario_argumentos) #Dictionary unpacking **
+
+Optional Parameters
+
+Ejercicio:
+	BuscarPalabrasEnArchivo:
+		una funcion que reciba palabras a buscar en un archivo (longitud variable)
+
+Positional-only Parameters:
+	def func(a, b, /, c)   <------ a y b son posicional only
+		print(a, b, c)			
+
+Keyword-only Parameters
+	def func(a, b, *, c) <-------- a y b son keyword only parameters
+		print(a, b, c)
+
+FUNCIONES map, zip, filter
+	--------> funciones anónimas o lambda
+
+MAP
+
+def eleva_al_cubo(num):
+    return num**3
+
+print(eleva_al_cubo(3))
+lista_de_numeros = [2,3,4,5,6,7,8,9,10]
+
+resultado = list(map(eleva_al_cubo, lista_de_numeros))
+resultado2 = list(map(lambda gato: gato**3, lista_de_numeros))
+
+print(resultado)
 
 
-	
+
+
+
+
+
+
+
+
+
 		
 
 
@@ -484,7 +578,6 @@ Ejercicio:
 
 
 
-	
 
 
 
@@ -494,17 +587,7 @@ Ejercicio:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+		
 
 
 
