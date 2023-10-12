@@ -553,6 +553,158 @@ resultado2 = list(map(lambda gato: gato**3, lista_de_numeros))
 
 print(resultado)
 
+class Demo:
+    pass
+
+class Coordenada:
+    x = 0
+    y = 0
+
+    def __init__(self, x, y):
+        self.x=x
+        self.y=y
+
+PROGRAMACIÓN ORIENTADA A OBJETOS (OOP)
+
+	- Abstracción, Encapsulamiento, Herencia, Polimorfismo
+
+		Abstracción y Encapsulamiento ---> class
+
+	Ejercicio: Definir la clase Triangulo, Cuadrado, Circulo y programa_figuras.py
+	Crear una lista con "surtido rico" de instancias de las 3 clases
+	Imprimir a partir de la lista el area sólo de los triangulos
+
+Miércoles 11Oct23
+
+	Clases		class Triangulo:
+	Instances	t1 = Triangulo(10,8)  <------ no hay operador new
+
+	Class attributes ----> definidos por la clase
+	Instance attributes ---> agregados a la instancia
+
+	Hasta Python 3.12 no existe la idea de Constructor Overloading ni de Method Overloading
+		Overload ---> Definir más de una vez con diferente combinación de argumentos
+
+Clase puede tener 1 sólo constructor y 1 sola implementación de los métodos
+
+class Persona:
+    nombre = ''
+    apellido = ''
+    def __init__():
+        nombre = "No definido"		<---------- IGNORADO
+        apellido = "No definido"
+
+    def __init__(self,n,a):
+        self.nombre = n
+        self.apellido = a
+
+    def devuelveNumero(self):		<---------- IGNORADO
+        print(8)
+    
+    def devuelveNumero(self,x):
+        print(x)
+
+Las clases en Python sí pueden heredar de otras. Es decir se soporta la generalizacion
+
+	class DriverException(Exception):
+	    pass
+
+	Es generalización porque DriverException "is a" Driver
+
+	Es una relación de abajo hacia arriba. Parent-Child, Superclass-SubClass, Base-Derived
+
+
+class Parent:
+    color_de_cabello = 'negro'
+
+class Child(Parent): #Child inherits from Parent
+    pass
+
+c = Child
+print(c.color_de_cabello)
+
+MULTIPLE INHERITANCE:
+class A:
+    label = 'a'
+
+class B(A):
+    pass
+
+class C(A):
+    label = 'c'
+
+class D(B,C):
+    pass
+
+d = D()
+print(d.label)
+
+STATIC METHODS Y CLASS METHODS
+class StringUtil:
+    @staticmethod
+    def is_palindrome(s, case_insensitive=True):
+        # we allow only letters and numbers
+        s = ''.join(c for c in s if c.isalnum()) # Study this!
+        # For case insensitive comparison, we lower-case s
+        if case_insensitive:
+            s = s.lower()
+        for c in range(len(s) // 2):
+            if s[c] != s[-c -1]:
+                return False
+        return True
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    @classmethod
+    def from_tuple(cls, coords): # cls is Point
+        return cls(*coords) # <--- devuelve una instancia de la clase Point
+
+    @classmethod
+    def from_point(cls, point): # cls is Point
+        return cls(point.x, point.y)
+
+PRIVATE METHODS
+
+Defining Private Methods and Attributes 
+To define a private attribute or method in python, you have to just prefix the name with a single underscore(_).
+
+Ejercicio:
+	banco.py
+		Cuenta
+	   Chequera   Tarjeta
+
+		Chequera -> propiedad linea_sobregiro
+							=> validacion que no permita negativos si acaso genera un ValueError
+		Tarjeta -> propiedad limite_de_credito
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

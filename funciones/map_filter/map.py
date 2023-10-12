@@ -6,6 +6,8 @@ lista_de_numeros = [2,3,4,5,6,7,8,9,10]
 
 resultado = list(map(eleva_al_cubo, lista_de_numeros))
 
+#anonima = lambda gato: gato**3
+#print(anonima(8))
 resultado2 = list(map(lambda gato: gato**3, lista_de_numeros))
 
 print(resultado2)
