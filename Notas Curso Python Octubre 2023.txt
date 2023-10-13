@@ -680,6 +680,167 @@ Ejercicio:
 							=> validacion que no permita negativos si acaso genera un ValueError
 		Tarjeta -> propiedad limite_de_credito
 
+class Tarjeta(Cuenta):
+    _limite_de_credito = 0
+
+    def __init__(self,limite):
+        self._limite_de_credito = limite
+
+    @property
+    def limite_de_credito(self):
+        return self._limite_de_credito
+    
+    @limite_de_credito.setter
+    def limite_de_credito(self,limite):
+        if limite < 0:
+            raise ValueError('Limite de crédito debe de ser positivo')
+        self._limite_de_credito = limite
+
+Jueves 12Oct23
+
+PACKAGES
+
+Python uses some terms that you may not be familiar with if you’re coming from a different language. 
+Among these are scripts, modules, packages, and libraries.
+
+Script (.py)
+A script is a Python file that’s intended to be run directly. When you run it, it should do something. 
+This means that scripts will often contain code written outside the scope of any classes or functions.
+
+	----> devops
+
+Module (.py)
+A module is a Python file that’s intended to be imported into scripts or other modules. 
+It often defines members like classes, functions, and variables intended to be used in other files that import it.
+
+	aritmeticabasica.py  ----> funciones suma, resta ....
+	geometria.py ----> clases de figuras
+
+Package (folder)
+A package is a collection of related modules that work together to provide certain functionality. 
+These modules are contained within a folder and can be imported just like any other modules. 
+This folder will often contain a special __init__ file that tells Python it’s a package, potentially containing 
+more modules nested within subfolders
+
+	un package es estrictamente un folder, que antes de 3.4 era obligatorio incluirle el archivo de __init__.py
+
+	import math
+	import random
+	from datetime import date, dateoffset
+	
+	python incluye en cualquier versión un set estandar de paquetes (built-in)
+
+Library
+A library is an umbrella term that loosely means “a bundle of code.” These can have tens or even hundreds 
+of individual modules that can provide a wide range of functionality. 
+Matplotlib is a plotting library. 
+The Python Standard Library contains hundreds of modules for performing common tasks, 
+like sending emails or reading JSON data. What’s special about the Standard Library is that it comes bundled with 
+your installation of Python, so you can use its modules without having to download them from anywhere.
+
+En python los modulos (.py)
+	pueden programarse en python y en lenguaje c
+
+import mod
+import mod as modulo_funcional
+
+from mod import *
+from mod import mensaje, lista, Gato, eleva_al_cuadrado
+from mod import mensaje, lista, Gato as Minimo, eleva_al_cuadrado
+
+Python packages
+
+Suppose you have developed a very large application that includes many modules. As the number of modules grows, 
+it becomes difficult to keep track of them all if they are dumped into one location. 
+This is particularly so if they have similar names or functionality. 
+You might wish for a means of grouping and organizing them.
+
+Packages allow for a hierarchical structuring of the module namespace using dot notation. 
+In the same way that modules help avoid collisions between global variable names, 
+packages help avoid collisions between module names.
+
+Creating a package is quite straightforward, since it makes use of the operating system’s inherent hierarchical 
+file structure. 
+
+	package1  <-------- Python package que tiene 2 Python modules
+		mod1.py
+		mod2.py
+
+from paquete1.mod2 import Triangulo as Triang
+
+Package initialization
+
+If a file named __init__.py is present in a package directory, it is invoked when the package or a module 
+in the package is imported. 
+This can be used for execution of package initialization code, such as initialization of package-level data.
+
+	__init__.py  <----- ES OPCIONAL de la 3.4 en adelante
+
+Note: Much of the Python documentation states that an __init__.py file must be present in the package directory 
+when creating a package. This was once true. It used to be that the very presence of __init__.py signified to Python 
+that a package was being defined. The file could contain initialization code or even be empty, but it had to be present.
+
+Starting with Python 3.3, Implicit Namespace Packages were introduced. <----- no se necesita obligatoriamente
+	el __init__.py
+
+
+try:
+    os.chdir("c:\\users\\cachavez")
+    os.mkdir("python1")
+    print("Se creo exitosamente")
+except:
+    print("El directorio python1 ya ha sido creado...")
+
+
+Ejercicio:
+	c:\users\cachavez\
+	python copiaarchivo.py --folder=datos --nuevoarchivo=copia.txt --origen=demo.txt
+
+		clase con un metodo estático UtileriaArchivos.copia_archivo()
+			UtileriaArchivos <<<<----clase que puede estar en un modulo dentro de otro paquete
+
+	- si el folder no existe no haya una excepcion
+
+	
+
+			
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
