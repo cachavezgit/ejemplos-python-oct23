@@ -801,73 +801,90 @@ Ejercicio:
 
 	- si el folder no existe no haya una excepcion
 
+import shutil
+
+Viernes 13Oct23
+
+importacion de paquetes
+
+\
+	copia_archivo.py
+		paquete1
+		paquete2
+			sub-paquete2
+				utilerias.py
+
+	from paquete2.sub-paquete2.utilerias import UtileriaArchivos
+	------------------------------->
+
+\
+	ejecutables
+		copia_archivo.py
+	paquete1
+	paquete2
+		sub-paquete2
+			utilerias.py
+
+		import sys
+		sys.path.append("../paquete2/sub_paquete2")
+		from utilerias import UtileriaArchivos
+
+
+import argparse
+
+import sys
+sys.path.append("../paquete2/sub_paquete2") #Agregar una ruta al path de búsqueda
+from utilerias import UtileriaArchivos
+
+parser = argparse.ArgumentParser()
+parser.add_argument("folder")   <------ obligatorio sin el -- 
+parser.add_argument("origen")
+parser.add_argument("--nuevoarchivo") <----- opcional
+argumentos = parser.parse_args()
+
+UtileriaArchivos.copia_archivo(argumentos.folder, argumentos.nuevoarchivo,argumentos.origen)
+
+DEBUGGING CON PYTHON
+
+	- Visual Studio Code (Con la extensión Python)
+
+		Run
+			Start Debugging
+
+				Que tipo de proyecto es? Script? Django? FastAPI? ...
+
+		Breakpoints visualmente
+		Step Into
+		Step Out
+		Step Over
+
+	- PyCharm (jetBrains)
+
+	- PDB (Python Debugger)
+
+		import pdb;pdb.set_trace()
+
+		ó				<---- se agrega una o la otra donde vayamos a depurar
+
+		breakpoint()
+
+		Se puede en modo break:
+			escribir nombres de variables para ver el valor que tienen
+			continue o c (abreviado)
+
+		Comandos de PDB:
+			https://realpython.com/python-debugging-pdb/#essential-pdb-commands
+
+
+DATABASES AND PYTHON
+	python -m venv venv\wilson 
 	
+	venv\wilson\Scripts\activate
 
-			
+		(wilson) C:\Users\cachavez\curso-python>
+
+	pip install mysql-connector-python
 	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -878,29 +895,11 @@ Ejercicio:
 
 		
 
+	
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		
 
 
 
