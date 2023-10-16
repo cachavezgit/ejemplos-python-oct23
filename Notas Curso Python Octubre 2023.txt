@@ -885,7 +885,39 @@ DATABASES AND PYTHON
 
 	pip install mysql-connector-python
 	
+Lunes 16Oct23
 
+	Web Apps Development (Python)
+		Web Apps
+		Web API
+
+	MVC
+		Model View Controller
+			Flask, FastAPI, Django
+
+		View ---> Controller ------> Model
+
+		  Rutas
+
+		<------------------------------------->
+			       HTTP
+			  Requests, Responses
+		HTML
+		CSS				  Python (Flask)
+		JS
+
+	Antes de instalar paquetes hay que inicializar el venv
+
+		venv\wilson\Scripts\activate
+		pip install flask
+		python -c "import flask;print(flask.__version__)"
+
+
+	
+
+
+
+	
 
 
 
